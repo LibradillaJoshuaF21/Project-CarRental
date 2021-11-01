@@ -25,6 +25,8 @@ import { CarsListComponent } from './admin/admin-do-cars/cars-list/cars-list.com
 import { CarsAddComponent } from './admin/admin-do-cars/cars-add/cars-add.component';
 import { CarsDeleteComponent } from './admin/admin-do-cars/cars-delete/cars-delete.component';
 import { CarsEditComponent } from './admin/admin-do-cars/cars-edit/cars-edit.component';
+import { AdminCheckRentalsComponent } from './admin/admin-check-rentals/admin-check-rentals.component';
+import { RentalListComponent } from './admin/admin-check-rentals/rental-list/rental-list.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { CarsEditComponent } from './admin/admin-do-cars/cars-edit/cars-edit.com
     CarsAddComponent,
     CarsDeleteComponent,
     CarsEditComponent,
+    AdminCheckRentalsComponent,
+    RentalListComponent,
   ],
   imports: [
     BrowserModule,
