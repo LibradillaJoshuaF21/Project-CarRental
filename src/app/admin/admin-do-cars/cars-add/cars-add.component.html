@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="card">   
+        <h2 class="card-header">Add New Car</h2>
+        <div class="card-body">
+            <form [formGroup]="addCarForm" (ngSubmit)="onSubmit()" id="addCarForm">
+                <div class="form-group">
+                    <label for="cmodel">Car Model</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="cmodel"
+                    formControlName="cmodel"
+                    [ngClass]="{ 'is-invalid': submitted && f.cmodel.errors }"/>
+                    <div *ngIf="submitted && f.cmodel.errors" class="invalid-feedback">
+                        <div *ngIf="f.cmodel.errors.required">Car Model is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cbrand">Car Brand</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="cbrand"
+                    formControlName="cbrand"
+                    [ngClass]="{ 'is-invalid': submitted && f.cbrand.errors }"/>
+                    <div *ngIf="submitted && f.cbrand.errors" class="invalid-feedback">
+                        <div *ngIf="f.cbrand.errors.required">Car Brand is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="transmission">Transmission</label>
+                    <div>
+                        <input
+                        type="radio"
+                        value="manual"
+                        name="transmission"
+                        formControlName="transmission"/>
+                        <label for="manual">Manual</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        value="automatic"
+                        name="transmission"
+                        formControlName="transmission"/>
+                        <label for="automatic">Automatic</label>
+                    </div>
+                    <div *ngIf="submitted && f.transmission.errors" class="invalid-feedback">
+                        <div *ngIf="f.transmission.errors.required">Transmission is required</div>
+                    </div>
+                </div>
+
+            </form>
+            <button class="btn btn-dark" form="addCarForm" id="buttonBox1">Add</button>
+            <button class="btn btn-light" id="buttonBox2">Cancel</button>
+        </div>
+    </div>
+</div>

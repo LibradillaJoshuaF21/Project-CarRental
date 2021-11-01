@@ -2,7 +2,7 @@
     <div class="card m-3 w-50">   
         <h2 class="card-header">Login Account</h2>
         <div class="card-body">
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="loginForm">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input
@@ -28,13 +28,9 @@
                         <div *ngIf="f.password.errors.required">Password is required</div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <button class="btn btn-dark">Login</button>
-                    <button class="btn btn-light">Register</button>
-                </div>
-                
             </form>
+            <button type="submit" class="btn btn-dark" id="buttonBox1" form="loginForm">Login</button>
+            <button type="submit "class="btn btn-light" id="buttonBox2">Register</button>
         </div>
     </div>
 </div>

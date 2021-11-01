@@ -1,8 +1,8 @@
 <div class="container">
-    <div class="card m-3 w-50">   
-        <h2 class="card-header">Registration</h2>
+    <div class="card">   
+        <h2 class="card-header">Add User Account</h2>
         <div class="card-body">
-            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" id="registerForm">
+            <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()" id="addUserForm">
                 <div class="form-group">
                     <label for="fname">First Name</label>
                     <input
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="lname">Address</label>
+                    <label for="address">Address</label>
                     <input
                     type="text"
                     class="form-control"
@@ -83,8 +83,9 @@
                         <div *ngIf="f.rpassword.errors.minlength">Password must be 6 characters</div>
                     </div>
                 </div>
+
             </form>
-            <button class="btn btn-dark" form="registerForm" id="buttonBox1">Register</button>
+            <button class="btn btn-dark" form="addUserForm" id="buttonBox1">Add</button>
             <button class="btn btn-light" id="buttonBox2">Cancel</button>
         </div>
     </div>

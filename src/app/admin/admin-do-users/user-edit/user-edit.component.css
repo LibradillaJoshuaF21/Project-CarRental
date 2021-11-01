@@ -1,13 +1,17 @@
+.container{
+    width: 350px;
+}
+
 #buttonBox1 {
     width: 125px;
     display:inline-block;
     margin-left: 0;
-    margin: 0 10px 0 0;
+    margin: 0 10px 5px 0;
 }
 
 #buttonBox2 {
     width: 100px;
     display:inline-block;
     margin-left: 0;
-    margin: 0 10px 0 0;
+    margin: 0 10px 5px 0;
 }
