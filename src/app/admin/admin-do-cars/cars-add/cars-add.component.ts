@@ -34,6 +34,6 @@ export class CarsAddComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true;
-    console.log(this.submitted);
+    console.log(this.addCarForm.controls['transmission'].value);
   }
 }

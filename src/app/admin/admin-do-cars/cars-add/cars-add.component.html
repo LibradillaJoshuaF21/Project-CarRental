@@ -46,15 +46,46 @@
                         name="transmission"
                         formControlName="transmission"/>
                         <label for="automatic">Automatic</label>
+                        <div *ngIf="submitted && f.transmission.errors" class="invalid-feedback">
+                            <div *ngIf="f.transmission.errors.required">Transmission is required</div>
+                        </div>
                     </div>
-                    <div *ngIf="submitted && f.transmission.errors" class="invalid-feedback">
-                        <div *ngIf="f.transmission.errors.required">Transmission is required</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="seats">Number of Seats</label>
+                    <div>
+                        <input
+                        type="radio"
+                        value="twoseats"
+                        name="seats"
+                        formControlName="seats"/>
+                        <label for="twoseats">2 - Seater</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        value="fourseats"
+                        name="seats"
+                        formControlName="seats"/>
+                        <label for="fourseats">4 - Seater</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        value="sevenseats"
+                        name="seats"
+                        formControlName="seats"/>
+                        <label for="sevenseats">7 - Seater</label>
+                        <div *ngIf="submitted && f.seats.errors" class="invalid-feedback">
+                            <div *ngIf="f.seats.errors.required">Number of seats is required</div>
+                        </div>
                     </div>
                 </div>
 
             </form>
-            <button class="btn btn-dark" form="addCarForm" id="buttonBox1">Add</button>
-            <button class="btn btn-light" id="buttonBox2">Cancel</button>
+            <button class="btn btn-dark" form="addCarForm" id="carsAddButtonBox1">Add</button>
+            <button class="btn btn-light" id="carsAddButtonBox2">Cancel</button>
         </div>
     </div>
 </div>
