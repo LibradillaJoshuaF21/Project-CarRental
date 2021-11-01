@@ -14,17 +14,12 @@ import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminDoUsersComponent } from './admin/admin-do-users/admin-do-users.component';
-import { UserHomeComponent } from './user/user-home/user-home.component';
-import { UserDoRentComponent } from './user/user-do-rent/user-do-rent.component';
-import { UserListComponent } from './admin/admin-do-users/user-list/user-list.component';
-import { UserAddComponent } from './admin/admin-do-users/user-add/user-add.component';
-import { UserDeleteComponent } from './admin/admin-do-users/user-delete/user-delete.component';
-import { UserEditComponent } from './admin/admin-do-users/user-edit/user-edit.component';
 import { AdminDoCarsComponent } from './admin/admin-do-cars/admin-do-cars.component';
 import { CarsListComponent } from './admin/admin-do-cars/cars-list/cars-list.component';
 import { CarsAddComponent } from './admin/admin-do-cars/cars-add/cars-add.component';
 import { CarsDeleteComponent } from './admin/admin-do-cars/cars-delete/cars-delete.component';
 import { CarsEditComponent } from './admin/admin-do-cars/cars-edit/cars-edit.component';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -33,12 +28,6 @@ import { CarsEditComponent } from './admin/admin-do-cars/cars-edit/cars-edit.com
     LoginComponent,
     AdminHomeComponent,
     AdminDoUsersComponent,
-    UserHomeComponent,
-    UserDoRentComponent,
-    UserListComponent,
-    UserAddComponent,
-    UserDeleteComponent,
-    UserEditComponent,
     AdminDoCarsComponent,
     CarsListComponent,
     CarsAddComponent,
@@ -46,6 +35,8 @@ import { CarsEditComponent } from './admin/admin-do-cars/cars-edit/cars-edit.com
     CarsEditComponent,
   ],
   imports: [
+    UsersModule,
+    
     BrowserModule,
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),

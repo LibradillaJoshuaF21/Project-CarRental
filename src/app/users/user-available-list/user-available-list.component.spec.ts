@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserDoRentComponent } from './user-do-rent.component';
+import { UserAvailableListComponent } from './user-available-list.component';
 
-describe('UserDoRentComponent', () => {
-  let component: UserDoRentComponent;
-  let fixture: ComponentFixture<UserDoRentComponent>;
+describe('UserAvailableListComponent', () => {
+  let component: UserAvailableListComponent;
+  let fixture: ComponentFixture<UserAvailableListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserDoRentComponent ]
+      declarations: [ UserAvailableListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserDoRentComponent);
+    fixture = TestBed.createComponent(UserAvailableListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
