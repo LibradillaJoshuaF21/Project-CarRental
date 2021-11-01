@@ -17,6 +17,9 @@ export class CarsEditComponent implements OnInit {
     cbrand: ['',{
       validators: [Validators.required],
     }],
+    ctype: ['',{
+      validators: [Validators.required],
+    }],
     transmission: ['',{
       validators: [Validators.required],
     }],

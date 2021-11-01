@@ -27,6 +27,13 @@ import { CarsDeleteComponent } from './admin/admin-do-cars/cars-delete/cars-dele
 import { CarsEditComponent } from './admin/admin-do-cars/cars-edit/cars-edit.component';
 import { AdminCheckRentalsComponent } from './admin/admin-check-rentals/admin-check-rentals.component';
 import { RentalListComponent } from './admin/admin-check-rentals/rental-list/rental-list.component';
+import { RentalDeleteComponent } from './admin/admin-check-rentals/rental-delete/rental-delete.component';
+import { RentalDetailsComponent } from './admin/admin-check-rentals/rental-details/rental-details.component';
+import { AdminDoReservationsComponent } from './admin/admin-do-reservations/admin-do-reservations.component';
+import { ReservationListComponent } from './admin/admin-do-reservations/reservation-list/reservation-list.component';
+import { ReservationAddComponent } from './admin/admin-do-reservations/reservation-add/reservation-add.component';
+import { ReservationDeleteComponent } from './admin/admin-do-reservations/reservation-delete/reservation-delete.component';
+import { ReservationEditComponent } from './admin/admin-do-reservations/reservation-edit/reservation-edit.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +55,13 @@ import { RentalListComponent } from './admin/admin-check-rentals/rental-list/ren
     CarsEditComponent,
     AdminCheckRentalsComponent,
     RentalListComponent,
+    RentalDeleteComponent,
+    RentalDetailsComponent,
+    AdminDoReservationsComponent,
+    ReservationListComponent,
+    ReservationAddComponent,
+    ReservationDeleteComponent,
+    ReservationEditComponent,
   ],
   imports: [
     BrowserModule,

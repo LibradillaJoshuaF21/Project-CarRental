@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="card">   
+        <h2 class="card-header">Edit Reservation</h2>
+        <div class="card-body">
+            <form [formGroup]="reserveEditForm" (ngSubmit)="onSubmit()" id="reserveEditForm">
+            <!-- CUICO FORMS HERE -->
+            </form>
+            <button class="btn btn-dark" form="reserveEditForm" id="reserveAddButtonBox1">Edit</button>
+            <button class="btn btn-light" id="reserveAddButtonBox2">Cancel</button>
+            <hr>
+            <div>
+                <app-reservation-delete></app-reservation-delete>
+            </div>
+        </div>
+    </div>
+</div>

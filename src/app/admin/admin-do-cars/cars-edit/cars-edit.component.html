@@ -1,6 +1,6 @@
 <div class="container">
     <div class="card">   
-        <h2 class="card-header">Add New Car</h2>
+        <h2 class="card-header">Edit (Car ID)</h2>
         <div class="card-body">
             <form [formGroup]="editCarForm" (ngSubmit)="onSubmit()" id="editCarForm">
                 <div class="form-group">
@@ -26,6 +26,45 @@
                     [ngClass]="{ 'is-invalid': submitted && f.cbrand.errors }"/>
                     <div *ngIf="submitted && f.cbrand.errors" class="invalid-feedback">
                         <div *ngIf="f.cbrand.errors.required">Car Brand is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ctype">Vehicle Type</label>
+                    <div>
+                        <input
+                        type="radio"
+                        value="sedan"
+                        name="ctype"
+                        formControlName="ctype"/>
+                        <label for="sedan">Sedan</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        value="minivan"
+                        name="ctype"
+                        formControlName="ctype"/>
+                        <label for="minivan">Minivan</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        value="pickup"
+                        name="ctype"
+                        formControlName="ctype"/>
+                        <label for="pickup">Pickup Truck</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        value="hatchback"
+                        name="ctype"
+                        formControlName="ctype"/>
+                        <label for="hatchback">Hatchback</label>
+                        <div *ngIf="submitted && f.ctype.errors" class="invalid-feedback">
+                            <div *ngIf="f.ctype.errors.required">Transmission is required</div>
+                        </div>
                     </div>
                 </div>
 
