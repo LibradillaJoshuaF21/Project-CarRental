@@ -1,54 +1,68 @@
-<div class="container">
-    <div class="card">   
-        <h2 class="card-header">Rent A Car</h2>
-        <div class="card-body">
-            <form [formGroup]="rentDetail" (ngSubmit)="onSubmit()" id="rentDetail">
-                <div class="form-group">
-                    <label for="carName">Select a Car</label>
-                    <select
-                    class="form-control"
-                    name="carName"
-                    formControlName="carName"
-                    [ngClass]="{ 'is-invalid': submitted && f.carName.errors }">
-                        <option value = "volvo">VOLVO</option>
-                        <option value = "hyundai">HYUNDAI</option>
-                        <option value = "isuzu">ISUZU</option>
-                        <option value = "toyota">TOYOTA</option>
-                    </select>
-                        
-                    <div *ngIf="submitted && f.carName.errors" class="invalid-feedback">
-                        <div *ngIf="f.carName.errors.required">Car Name is required</div>
-                    </div>
-                </div>
+<div class="container2">
+  <div class="container">
+    <app-user-available-list></app-user-available-list>
+  </div>
+  <div class="container">
+    <div class="card">
+      <h2 class="card-header">Rent A Car</h2>
+      <div class="card-body">
+        <form [formGroup]="rentDetail" (ngSubmit)="onSubmit()" id="rentDetail">
+          <div class="form-group">
+            <label for="carName">Select a Car</label>
+            <select
+              class="form-control"
+              name="carName"
+              formControlName="carName"
+              [ngClass]="{ 'is-invalid': submitted && f.carName.errors }"
+            >
+              <option value="volvo">VOLVO</option>
+              <option value="hyundai">HYUNDAI</option>
+              <option value="isuzu">ISUZU</option>
+              <option value="toyota">TOYOTA</option>
+            </select>
 
-                <div class="form-group">
-                    <label for="date">Start Date</label>
-                    <input
-                    type="date"
-                    class="form-control"
-                    name="startDate"
-                    formControlName="startDate"
-                    [ngClass]="{ 'is-invalid': submitted && f.startDate.errors }"/>
-                    <div *ngIf="submitted && f.startDate.errors" class="invalid-feedback">
-                        <div *ngIf="f.startDate.errors.required">Start Date is required</div>
-                    </div>
-                </div>
+            <div *ngIf="submitted && f.carName.errors" class="invalid-feedback">
+              <div *ngIf="f.carName.errors.required">Car Name is required</div>
+            </div>
+          </div>
 
-                <div class="form-group">
-                    <label for="date">End Date</label>
-                    <input
-                    type="date"
-                    class="form-control"
-                    name="endDate"
-                    formControlName="endDate"
-                    [ngClass]="{ 'is-invalid': submitted && f.endDate.errors }"/>
-                    <div *ngIf="submitted && f.endDate.errors" class="invalid-feedback">
-                        <div *ngIf="f.endDate.errors.required">End Date is required</div>
-                    </div>
-                </div>
+          <div class="form-group">
+            <label for="date">Start Date</label>
+            <input
+              type="date"
+              class="form-control"
+              name="startDate"
+              formControlName="startDate"
+              [ngClass]="{ 'is-invalid': submitted && f.startDate.errors }"
+            />
+            <div
+              *ngIf="submitted && f.startDate.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.startDate.errors.required">
+                Start Date is required
+              </div>
+            </div>
+          </div>
 
-            </form>
-            <button class="btn btn-dark" form="rentDetail" id="buttonBox1">Rent</button>
-        </div>
+          <div class="form-group">
+            <label for="date">End Date</label>
+            <input
+              type="date"
+              class="form-control"
+              name="endDate"
+              formControlName="endDate"
+              [ngClass]="{ 'is-invalid': submitted && f.endDate.errors }"
+            />
+            <div *ngIf="submitted && f.endDate.errors" class="invalid-feedback">
+              <div *ngIf="f.endDate.errors.required">End Date is required</div>
+            </div>
+          </div>
+        </form>
+        <button class="btn btn-dark" form="rentDetail" id="buttonBox1">
+          Rent
+        </button>
+      </div>
     </div>
+  </div>
 </div>

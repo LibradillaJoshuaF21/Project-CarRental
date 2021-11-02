@@ -1,6 +1,10 @@
+.container2 {
+    display: flex;
+    margin: 10px 0 0 100px;
+}
 
 .container{
-    width: 350px;
+    width: 450px;
 }
 
 #buttonBox1 {

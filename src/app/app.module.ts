@@ -22,6 +22,10 @@ import { CarsEditComponent } from './admin/admin-do-cars/cars-edit/cars-edit.com
 import { UsersModule } from './users/users.module';
 import { AdminCheckRentalsComponent } from './admin/admin-check-rentals/admin-check-rentals.component';
 import { RentalListComponent } from './admin/admin-check-rentals/rental-list/rental-list.component';
+import { UserAddComponent } from './admin/admin-do-users/user-add/user-add.component';
+import { UserDeleteComponent } from './admin/admin-do-users/user-delete/user-delete.component';
+import { UserEditComponent } from './admin/admin-do-users/user-edit/user-edit.component';
+import { UserListComponent } from './admin/admin-do-users/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,10 @@ import { RentalListComponent } from './admin/admin-check-rentals/rental-list/ren
     CarsEditComponent,
     AdminCheckRentalsComponent,
     RentalListComponent,
+    UserAddComponent,
+    UserDeleteComponent,
+    UserEditComponent,
+    UserListComponent
   ],
   imports: [
     UsersModule,

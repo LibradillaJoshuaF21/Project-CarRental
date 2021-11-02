@@ -8,6 +8,8 @@ import { UserRentsComponent } from './user-rents/user-rents.component';
 import { UserHistoryComponent } from './user-history/user-history.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { UserAvailableListComponent } from './user-available-list/user-available-list.component';
+import { UserRentalsComponent } from './user-rentals/user-rentals.component';
+import { UserRentalsDetailComponent } from './user-rentals-detail/user-rentals-detail.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { UserAvailableListComponent } from './user-available-list/user-available
     UserHomeComponent,
     UserRentsComponent,
     UserHistoryComponent,
-    UserAvailableListComponent
+    UserAvailableListComponent,
+    UserRentalsComponent,
+    UserRentalsDetailComponent,
   ],
   imports: [
     CommonModule,

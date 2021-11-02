@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="card">
+    <h2 class="card-header title">Rentals Active</h2>
+    <div class="card-body">
+      <div class="card carCard">
+        <div class="card-header title">
+          <span class="id">Car ID</span>
+          <span class="edit">
+            <i class="bi bi-pencil-square editing"></i>
+          </span>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Model</li>
+          <li class="list-group-item">Start Date</li>
+          <li class="list-group-item">End Date</li>
+        </ul>
+      </div>
+      <div class="card carCard">
+        <div class="card-header title">
+          <span class="id">Car ID</span>
+          <span class="edit">
+            <i class="bi bi-pencil-square editing" (click) ="toggleEdit()"></i>
+          </span>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Model</li>
+          <li class="list-group-item">Start Date</li>
+          <li class="list-group-item">End Date</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" *ngIf="editing">
+      <app-user-rentals-detail></app-user-rentals-detail>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.container{
+    width: 400px;
+}
+
+.carCard{
+    margin-top: 15px;
+}
+
+.editing{
+    cursor: pointer;   
+    text-align: center;
+}
+
+.title{
+    display:block;
+    color: white;
+    background-color: black;
+}
+
+.title .edit{
+    float: right;
+}
+
+.title .id{
+    float:left;
+}
+
+#buttonBox1 {
+    width: 125px;
+    display:inline-block;
+    margin-left: 0;
+    margin: 0 10px 0 0;
+}
