@@ -85,10 +85,10 @@
                 </div>
             </form>
             <button class="btn btn-dark" form="editUserForm" id="userEditButtonBox1">Edit User</button>
-            <button class="btn btn-light" id="userEditButtonBox2">Cancel</button>
-            <hr>
+            <button class="btn btn-light" id="userEditButtonBox2" (click)="stopEditing()">Cancel</button>
+            <hr/>
             <div>
-                <app-user-delete></app-user-delete>
+                <app-user-delete [sendUserID]="user.key"></app-user-delete>
             </div>
         </div>
     </div>

@@ -2,30 +2,21 @@
     <div class="card">
         <h2 class="card-header title">User List</h2>
         <div class="card-body">
-            <div class="card userCard">
+            <div 
+            class="card userCard"
+            *ngFor="let user of sendUserList; index as i">
                 <div class="card-header title">
-                    <span class="id">Xx User Key xX</span>
-                    <span class="edit">
+                    <span class="id">{{user.key}}</span>
+                    <span class="edit" (click)="onClick(i)">
                         <i class="bi bi-pencil-square editing"></i>
                     </span>
                   </div>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item"> Full Name</li>
-                    <li class="list-group-item"> email</li>
-                    <li class="list-group-item"> contact number</li>
-                  </ul>
-            </div>
-            <div class="card userCard">
-                <div class="card-header title">
-                    <span class="id">Xx User Key xX</span>
-                    <span class="edit">
-                        <i class="bi bi-pencil-square editing"></i>
-                    </span>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"> Full Name</li>
-                    <li class="list-group-item"> email</li>
-                    <li class="list-group-item"> contact number</li>
+                    <li class="list-group-item">
+                        {{user.firstName + " " + user.lastName}}
+                    </li>
+                    <li class="list-group-item">{{user.email}}</li>
+                    <li class="list-group-item">{{user.contactNumber}}</li>
                   </ul>
             </div>
         </div>

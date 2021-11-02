@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import { UserServiceService } from 'src/app/shared/user-service.service';
 
 @Component({
   selector: 'app-user-delete',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDeleteComponent implements OnInit {
 
-  constructor() { }
+  @Input('sendUserID') userID!: string;
+
+  constructor(private uservice: UserServiceService) { }
 
   ngOnInit(): void {
+  }
+
+  onDelete(){
+    this.uservice.removeUser(this.userID);
   }
 
 }
