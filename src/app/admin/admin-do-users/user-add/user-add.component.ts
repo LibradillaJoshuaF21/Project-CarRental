@@ -10,8 +10,6 @@ import { User } from 'src/app/shared/user';
 })
 export class UserAddComponent implements OnInit {
 
-  submitted = false;
-
   addUserForm = this.fb.group({
     fname: ['',{
       validators: [Validators.required],
@@ -39,21 +37,17 @@ export class UserAddComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.addUserForm.valid){
-      this.submitted = true;
-      const payload: User = {
-        key: '',
-        firstName: this.f.fname.value,
-        lastName: this.f.lname.value,
-        address: this.f.address.value,
-        email: this.f.email.value,
-        contactNumber: this.f.contactnum.value,
-        password: this.f.rpassword.value
-      };
-
+    const payload: User = {
+      key: '',
+      firstName: this.f.fname.value,
+      lastName: this.f.lname.value,
+      address: this.f.address.value,
+      email: this.f.email.value,
+      contactNumber: this.f.contactnum.value,
+      password: this.f.rpassword.value
+    };
       this.uservice.addUser(payload);
-    }
-    this.addUserForm.reset();
+      this.addUserForm.reset();
   }
 
   get f(){

@@ -10,9 +10,9 @@
                     class="form-control"
                     name="cmodel"
                     formControlName="cmodel"
-                    [ngClass]="{ 'is-invalid': submitted && f.cmodel.errors }"/>
-                    <div *ngIf="submitted && f.cmodel.errors" class="invalid-feedback">
-                        <div *ngIf="f.cmodel.errors.required">Car Model is required</div>
+                    [ngClass]="{ 'is-invalid': f.cmodel.dirty && f.cmodel.errors }"/>
+                    <div *ngIf="f.cmodel.dirty && f.cmodel.errors" class="invalid-feedback">
+                        <div *ngIf="f.cmodel.dirty && f.cmodel.errors.required">Car Model is required</div>
                     </div>
                 </div>
 
@@ -23,9 +23,9 @@
                     class="form-control"
                     name="cbrand"
                     formControlName="cbrand"
-                    [ngClass]="{ 'is-invalid': submitted && f.cbrand.errors }"/>
-                    <div *ngIf="submitted && f.cbrand.errors" class="invalid-feedback">
-                        <div *ngIf="f.cbrand.errors.required">Car Brand is required</div>
+                    [ngClass]="{ 'is-invalid': f.cmodel.dirty && f.cbrand.errors }"/>
+                    <div *ngIf="f.cmodel.dirty && f.cbrand.errors" class="invalid-feedback">
+                        <div *ngIf="f.cmodel.dirty && f.cbrand.errors.required">Car Brand is required</div>
                     </div>
                 </div>
 
@@ -62,8 +62,8 @@
                         name="ctype"
                         formControlName="ctype"/>
                         <label for="hatchback">Hatchback</label>
-                        <div *ngIf="submitted && f.ctype.errors" class="invalid-feedback">
-                            <div *ngIf="f.ctype.errors.required">Transmission is required</div>
+                        <div *ngIf="f.cmodel.dirty && f.ctype.errors" class="invalid-feedback">
+                            <div *ngIf="f.cmodel.dirty && f.ctype.errors.required">Transmission is required</div>
                         </div>
                     </div>
                 </div>
@@ -85,8 +85,8 @@
                         name="transmission"
                         formControlName="transmission"/>
                         <label for="automatic">Automatic</label>
-                        <div *ngIf="submitted && f.transmission.errors" class="invalid-feedback">
-                            <div *ngIf="f.transmission.errors.required">Transmission is required</div>
+                        <div *ngIf="f.cmodel.dirty && f.transmission.errors" class="invalid-feedback">
+                            <div *ngIf="f.cmodel.dirty && f.transmission.errors.required">Transmission is required</div>
                         </div>
                     </div>
                 </div>
@@ -116,18 +116,18 @@
                         name="seats"
                         formControlName="seats"/>
                         <label for="sevenseats">7 - Seater</label>
-                        <div *ngIf="submitted && f.seats.errors" class="invalid-feedback">
-                            <div *ngIf="f.seats.errors.required">Number of seats is required</div>
+                        <div *ngIf="f.cmodel.dirty && f.seats.errors" class="invalid-feedback">
+                            <div *ngIf="f.cmodel.dirty && f.seats.errors.required">Number of seats is required</div>
                         </div>
                     </div>
                 </div>
 
             </form>
-            <button class="btn btn-dark" form="editCarForm" id="carsEditButtonBox1">Edit</button>
-            <button class="btn btn-light" id="carsEditButtonBox2">Cancel</button>
+            <button class="btn btn-dark" form="editCarForm" id="carsEditButtonBox1" [disabled]="!editCarForm.valid">Edit</button>
+            <button class="btn btn-light" id="carsEditButtonBox2" (click)="stopEditing()">Cancel</button>
             <hr>
             <div>
-                <app-cars-delete></app-cars-delete>
+                <app-cars-delete [sendCarID]="car.key" (editStatus)="passEditStatus($event)" ></app-cars-delete>
             </div>
         </div>
     </div>

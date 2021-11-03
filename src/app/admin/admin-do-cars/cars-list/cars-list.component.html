@@ -2,35 +2,21 @@
     <div class="card">
         <h2 class="card-header title">Car List</h2>
         <div class="card-body">
-            <div class="card carCard">
+            <div 
+            class="card carCard"
+            *ngFor="let car of carList; index as i">
                 <div class="card-header title">
-                    <span class="id">Car ID</span>
-                    <span class="edit">
+                    <span class="id">{{car.key}}</span>
+                    <span class="edit" (click)="onClick(i)">
                         <i class="bi bi-pencil-square editing"></i>
                     </span>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"> Model</li>
-                    <li class="list-group-item"> Brand</li>
-                    <li class="list-group-item"> Type</li>
-                    <li class="list-group-item"> Automatic/Manual</li>
-                    <li class="list-group-item"> Seats</li>
-                  </ul>
-            </div>
-            <div class="card carCard">
-                <div class="card-header title">
-                    <span class="id">Car ID</span>
-                    <span class="edit">
-                        <i class="bi bi-pencil-square editing"></i>
-                    </span>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"> Model</li>
-                    <li class="list-group-item"> Brand</li>
-                    <li class="list-group-item"> Type</li>
-                    <li class="list-group-item"> Automatic/Manual</li>
-                    <li class="list-group-item"> Seats</li>
-                  </ul>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{car.model}}</li>
+                    <li class="list-group-item">{{car.type}}</li>
+                    <li class="list-group-item">{{car.transmission}}</li>
+                    <li class="list-group-item">{{car.seats + " seater"}}</li>
+                </ul>
             </div>
         </div>
     </div>

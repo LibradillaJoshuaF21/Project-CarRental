@@ -10,9 +10,9 @@ import { User } from 'src/app/shared/user';
 })
 export class UserEditComponent implements OnInit {
 
-  @Output() editStatus = new EventEmitter<boolean>();
   @Input('sendUserInfo') user!: User;
-  submitted = false;
+  @Output() editStatus = new EventEmitter<boolean>();
+  
   editUserForm!: FormGroup;
 
 
@@ -85,5 +85,11 @@ export class UserEditComponent implements OnInit {
     this.editStatus.emit(false);
   }
 
-  get f(){return this.editUserForm.controls;}
+  passEditStatus(status: any){
+    this.editStatus.emit(status);
+  }
+
+  get f(){
+    return this.editUserForm.controls;
+  }
 }

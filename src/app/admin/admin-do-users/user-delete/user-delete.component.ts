@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { UserServiceService } from 'src/app/shared/user-service.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { UserServiceService } from 'src/app/shared/user-service.service';
 export class UserDeleteComponent implements OnInit {
 
   @Input('sendUserID') userID!: string;
+  @Output() editStatus = new EventEmitter<boolean>();
 
   constructor(private uservice: UserServiceService) { }
 
@@ -17,6 +18,7 @@ export class UserDeleteComponent implements OnInit {
 
   onDelete(){
     this.uservice.removeUser(this.userID);
+    this.editStatus.emit(false);
   }
 
 }

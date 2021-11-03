@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { CarsService } from 'src/app/shared/admin-cars/cars.service';
+import { Car } from 'src/app/shared/admin-cars/cars';
 
 @Component({
   selector: 'app-cars-add',
@@ -7,8 +9,6 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./cars-add.component.css']
 })
 export class CarsAddComponent implements OnInit {
-
-  submitted = false;
 
   addCarForm = this.fb.group({
     cmodel: ['',{
@@ -28,15 +28,25 @@ export class CarsAddComponent implements OnInit {
     }],
   })
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private cservice: CarsService) { }
 
   ngOnInit(): void {
   }
 
-  get f(){return this.addCarForm.controls;}
-
   onSubmit(){
-    this.submitted = true;
-    console.log(this.addCarForm.controls['transmission'].value);
+    const payload: Car = {
+      key: '',
+      model: this.f.cmodel.value,
+      brand: this.f.cbrand.value,
+      type: this.f.ctype.value,
+      transmission: this.f.transmission.value,
+      seats: this.f.seats.value
+    };
+      this.cservice.addCar(payload);
+      this.addCarForm.reset();
+  }
+
+  get f(){
+    return this.addCarForm.controls;
   }
 }

@@ -1,5 +1,19 @@
 <div class="container">
-    <app-cars-list></app-cars-list>
-    <app-cars-add></app-cars-add>
-    <app-cars-edit></app-cars-edit>
+    <div>
+        <app-cars-list
+        [sendCarList]="carList"
+        (selectedCar) = "onEdit($event)">
+        </app-cars-list>
+    </div>
+
+    <div>
+        <app-cars-add></app-cars-add>
+    </div>
+
+    <div *ngIf="editing">
+        <app-cars-edit
+        [sendCarInfo]="carList[editCarIndex]"
+        (editStatus)="editComplete($event)"
+        ></app-cars-edit>
+    </div>
 </div>
